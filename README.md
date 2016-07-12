@@ -35,7 +35,7 @@ def deps do
 end
 ```
 
-There are a number of options you can tweak to customize the way `dex` is used. All of the options described below should be put into your config.exs file.
+There are a number of options you can tweak to customize the way `dex` is used. All of the options described below should be put into your config.exs file, or prod.secret.exs if you don't want it upload to your scm.
 
 ```elixir
 config :dex, DeployManager,
