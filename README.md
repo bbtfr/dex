@@ -26,8 +26,22 @@ Like `exrm`, this project's goal is to make deployments with Elixir projects a b
 **Add `dex` to your list of dependencies in `mix.exs`:**
 
 ```elixir
+def application do
+  [applications: [:dex]]
+end
+
 def deps do
   [{:dex, "~> x.x.x"}]
 end
 ```
 
+There are a number of options you can tweak to customize the way `dex` is used. All of the options described below should be put into your config.exs file.
+
+```elixir
+config :your_app, DeployManager,
+  server: "your.server.com",
+  username: "your_username",
+  deploy_to: "/var/www/your_app",
+  link_files: ["config/prod.secret.exs", ".env"]
+
+```
