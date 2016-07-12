@@ -44,6 +44,11 @@ defmodule DeployManager.Utils do
   end
 
   def parse_args _args do
+    unless Application.get_env(:dex, DeployManager) do
+      Logger.error "Dex is not configured, please add `config :dex, DeployManager, options` to your mix config file."
+      System.halt(127)
+    end
+
     defaults = %{
       name:    Mix.Project.config |> Keyword.get(:app) |> Atom.to_string,
       version: Mix.Project.config |> Keyword.get(:version),
