@@ -7,6 +7,8 @@ defmodule Dex.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description(),
+     package: package(),
      deps: deps()]
   end
 
@@ -27,6 +29,23 @@ defmodule Dex.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:exrm, "~> 1.0", optional: true}]
+    [{:exrm, "~> 1.0", optional: true},
+     {:ex_doc, ">= 0.0.0", only: :dev}]
+  end
+
+  defp description do
+    """
+    Deploy Elixir application with Mix.Task.
+    """
+  end
+
+  defp package do
+    [# These are the default files included in the package
+     name: :dex,
+     files: ["lib", "config", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     maintainers: ["Theo Li"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/bbtfr/dex",
+              "Docs" => "http://bbtfr.github.io/dex/"}]
   end
 end
