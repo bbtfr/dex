@@ -42,7 +42,7 @@ defmodule Dex.Mixfile do
   defp package do
     [# These are the default files included in the package
      name: :dex,
-     files: ["lib", "config", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     files: ["lib", "config", "mix.exs", "README*", "LICENSE*"],
      maintainers: ["Theo Li"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/bbtfr/dex",
