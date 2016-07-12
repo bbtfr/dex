@@ -1,7 +1,7 @@
 defmodule DeployManager.Utils do
   @moduledoc """
-  This module provides helper functions for the `mix deploy` and
-  `mix deploy.setup` tasks.
+  This module provides helper functions for the tasks like `mix deploy`,
+  `mix deploy.setup`, etc.
   """
 
   alias  ReleaseManager.Utils.Logger
