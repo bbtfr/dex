@@ -38,7 +38,7 @@ end
 There are a number of options you can tweak to customize the way `dex` is used. All of the options described below should be put into your config.exs file.
 
 ```elixir
-config :your_app, DeployManager,
+config :dex, DeployManager,
   server: "your.server.com",
   username: "your_username",
   deploy_to: "/var/www/your_app",

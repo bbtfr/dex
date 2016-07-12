@@ -44,16 +44,14 @@ defmodule DeployManager.Utils do
   end
 
   def parse_args _args do
-    name = Mix.Project.config |> Keyword.get(:app)
-
     defaults = %{
-      name:    name |> Atom.to_string,
+      name:    Mix.Project.config |> Keyword.get(:app) |> Atom.to_string,
       version: Mix.Project.config |> Keyword.get(:version),
       env:     Mix.env
     }
 
     [:username, :password, :server, :deploy_to, :link_files]
-    |> Enum.map(&({&1, Application.get_env(name, DeployManager) |> Keyword.get(&1)}))
+    |> Enum.map(&({&1, Application.get_env(:dex, DeployManager) |> Keyword.get(&1)}))
     |> Enum.into(defaults)
   end
 end
