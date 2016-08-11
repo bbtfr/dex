@@ -17,7 +17,7 @@ For your convenience, there're also some more tasks you can work with:
 1. `mix deploy.setup`, setup a deployment environment for the current mix application.
 2. `mix deploy.service`, run `exrm` application script on remote (eg: `mix deploy.service start`).
 3. `mix deploy.mix`, run a Mix task on remote (eg: `mix deploy.mix ecto.migrate`).
-4. `mix deploy.clean`, Ccean the deployment environment for the current mix application.
+4. `mix deploy.clean`, clean the deployment environment for the current mix application.
 
 ## Installation
 
